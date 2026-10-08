@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URL Journey Lab</title>
+  <meta name="description" content="A live look at what your browser did to load this page: DNS, connection, first byte, and which files came from cache.">
+  <link rel="icon" href="/assets/logo.svg?v=1" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css?v=1">
+</head>
+<body>
+<main>
+  <p class="tag">Team 1 · live demo</p>
+  <h1>What did your browser just do?</h1>
+  <p>This page measures its own load with the browser's Performance API. Reload it a few times and watch what disappears: the same site gets faster because steps are skipped.</p>
+
+  <img src="/assets/hero.svg?v=1" alt="Diagram: browser, DNS, edge, origin" width="860" height="140" style="max-width:100%;height:auto">
+
+  <h2>This page load</h2>
+  <div class="grid" id="stats" aria-live="polite"></div>
+  <div class="card">
+    <button id="reload" type="button">Reload</button>
+    <button id="revisit" type="button" class="alt">Revisit (like pressing Enter)</button>
+    <button id="clear" type="button" class="alt">Clear history</button>
+    <p id="hint" style="margin:.8rem 0 0;font-size:.9rem"></p>
+  </div>
+
+  <h2>Document response headers</h2>
+  <div class="card"><pre id="headers" style="margin:0;white-space:pre-wrap;word-break:break-all">Loading…</pre></div>
+
+  <h2>Every file this page loaded</h2>
+  <div class="wrap">
+    <table>
+      <thead><tr><th>File</th><th>Type</th><th>Size</th><th>Source</th><th style="width:34%">Waterfall</th></tr></thead>
+      <tbody id="resources"></tbody>
+    </table>
+  </div>
+  <p style="font-size:.85rem;color:var(--muted)">Source is inferred from transfer size: <b>cache</b> = 0 bytes over the network, <b>304</b> = revalidated (headers only), <b>network</b> = downloaded.</p>
+
+  <h2>Dynamic API call</h2>
+  <div class="card"><pre id="api" style="margin:0;white-space:pre-wrap">Loading…</pre></div>
+
+  <h2>Load history (this browser)</h2>
+  <div class="wrap">
+    <table>
+      <thead><tr><th>#</th><th>Navigation</th><th>Document</th><th>DNS</th><th>Connect</th><th>TTFB</th><th>Total</th><th>Cache / 304 / net</th></tr></thead>
+      <tbody id="history"></tbody>
+    </table>
+  </div>
+
+  <h2>Compare rendering strategies</h2>
+  <p><a href="/ssr">Server-rendered page</a> · <a href="/csr">Browser-rendered page</a> · <a href="/api/data">Raw API</a>. Press <code>Ctrl+U</code> (view source) on each of the first two.</p>
+</main>
+<script src="/assets/app.js?v=1" defer></script>
+</body>
+</html>

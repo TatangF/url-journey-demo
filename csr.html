@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSR page</title>
+  <link rel="stylesheet" href="/assets/style.css?v=1">
+</head>
+<body>
+<main>
+  <p class="tag">Client-side rendered</p>
+  <h1>Built in the browser</h1>
+  <!-- The server sends only this empty shell. JavaScript fills it in. -->
+  <div id="app" class="card">Loading…</div>
+  <noscript>This page needs JavaScript: that is the point of the demo.</noscript>
+  <p>Press <code>Ctrl+U</code>: the timestamp is NOT in the source. <a href="/">← Back</a> · <a href="/ssr">Compare with the server-rendered page</a></p>
+</main>
+<script src="/assets/csr.js?v=1" defer></script>
+</body>
+</html>
